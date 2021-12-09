@@ -32,6 +32,11 @@ def generate_frames():
 def index():
     return render_template('index.html')
 
+@app.route('/favicon.ico')
+def fun():
+    return render_template('index.html')
+
+
 @app.route('/video')
 def video_feed():
     return Response(generate_frames() , mimetype='multipart/x-mixed-replace; boundary=frame')
